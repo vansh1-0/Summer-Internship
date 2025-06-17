@@ -1,0 +1,260 @@
+/* Define color variables for both modes */
+:root {
+  --bg-color: #121212;
+  --form-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-muted: #00d8ff;
+  --border-color: #00d8ff;
+  --input-bg: #282828;
+  --input-border: transparent;
+  --input-color: #e0e0e0;
+  --button-bg: linear-gradient(135deg, #0072ff, #00c6ff);
+  --button-color: #121212;
+  --button-bg-hover: linear-gradient(135deg, #00c6ff, #0072ff);
+  --button-hover-shadow: #00d8ffcc;
+  --shadow-color: rgba(0, 216, 255, 0.2);
+  --heading-shadow: #00d8ff99;
+  --news-bg: #1e1e1e;
+  --news-bg-hover: #282828;
+  --news-shadow: rgba(0, 216, 255, 0.2);
+  --news-shadow-hover: rgba(0, 216, 255, 0.3);
+  --img-bg: #1e1e1e;
+  --img-border: #0072ff;
+  --img-shadow-light: rgba(0, 198, 255, 0.15);
+  --img-shadow-dark: rgba(0, 114, 255, 0.25);
+  --link-color: #004d99;
+}
+
+/* Light mode override */
+body.light-mode {
+  --bg-color: #f5f8fa;
+  --form-bg: #ffffff;
+  --text-color: #222222;
+  --text-muted: #555555;
+  --border-color: #0072ff;
+  --input-bg: #f0fbff;
+  --input-border: #0072ff;
+  --input-color: #004d99;
+  --button-bg: linear-gradient(135deg, #0072ff, #00c6ff);
+  --button-color: #ffffff;
+  --button-bg-hover: linear-gradient(135deg, #00c6ff, #0072ff);
+  --button-hover-shadow: #00d8ffcc;
+  --shadow-color: rgba(0, 198, 255, 0.2);
+  --heading-shadow: rgba(0, 114, 255, 0.4);
+  --news-bg: #e6f5ff;
+  --news-bg-hover: #cce9ff;
+  --news-shadow: rgba(0, 198, 255, 0.15);
+  --news-shadow-hover: rgba(0, 198, 255, 0.3);
+  --img-bg: #f0fbff;
+  --img-border: #0072ff;
+  --img-shadow-light: rgba(0, 198, 255, 0.15);
+  --img-shadow-dark: rgba(0, 114, 255, 0.25);
+  --link-color: #004d99;
+}
+
+/* Apply variables */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-shadow: 0 0 8px var(--heading-shadow);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+form {
+  background: var(--form-bg);
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 450px;
+  width: 100%;
+  margin-bottom: 30px;
+  border: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+form label {
+  flex: 1 0 100%;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  transition: color 0.4s ease;
+}
+
+form select {
+  flex: 2 1 180px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--input-color);
+  font-size: 1rem;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form select:hover,
+form select:focus {
+  background-color: var(--news-bg-hover);
+}
+
+form button {
+  flex: 1 0 120px;
+  background: var(--button-bg);
+  color: var(--button-color);
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 216, 255, 0.6);
+}
+
+form button:hover {
+  background-color: var(--button-bg-hover);
+  box-shadow: 0 0 8px var(--button-hover-shadow);
+}
+
+div > h2 {
+  color: var(--border-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-shadow: 0 0 6px var(--heading-shadow);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+div > img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 40px auto;
+  border-radius: 12px;
+  background-color: var(--img-bg);
+  box-shadow:
+    0 20px 30px var(--img-shadow-light),
+    0 6px 15px var(--img-shadow-dark);
+  border: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+div > h3 {
+  color: var(--border-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 0 5px var(--heading-shadow);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+ul li {
+  background: var(--news-bg);
+  margin-bottom: 12px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px var(--news-shadow);
+  font-weight: 500;
+  color: var(--input-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+ul li:hover {
+  background-color: var(--news-bg-hover);
+  box-shadow: 0 6px 15px var(--news-shadow-hover);
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  form select,
+  form button {
+    flex: 1 0 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  div > h2 {
+    font-size: 1.5rem;
+  }
+
+  div > h3 {
+    font-size: 1.3rem;
+  }
+
+  ul {
+    max-width: 100%;
+  }
+}
+
+/* Theme Toggle Button - Circular Top-Right */
+#mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--button-bg);
+  color: var(--button-color);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 4px 12px var(--button-hover-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mode-toggle:hover {
+  background: var(--button-bg-hover);
+  box-shadow: 0 0 10px var(--button-hover-shadow);
+}
+
+body.light-mode #mode-toggle {
+  background: var(--button-bg);
+  color: var(--button-color);
+}
