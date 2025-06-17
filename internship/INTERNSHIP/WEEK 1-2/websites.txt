@@ -1,8 +1,0 @@
-for ecommerce web scrapper - 	https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops
-                           -  
-                           -    https://books.toscrape.com/
-https://webscraper.io/test-sites/e-commerce/allinone/phones/touch
-https://webscraper.io/test-sites/e-commerce/static
-
-https://books.toscrape.com/catalogue/category/books_1/index.html
-
