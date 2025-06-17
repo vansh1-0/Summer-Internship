@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Theme Toggle Button (Circular) -->
+  <button id="mode-toggle" title="Toggle Theme">🔆</button>
+
+  <h1>Crypto Tracker & Forecast</h1>
+  
+  <form method="post">
+    <label>Select Coin:</label>
+    <select name="coin">
+      <option value="bitcoin">Bitcoin (BTC)</option>
+      <option value="ethereum">Ethereum (ETH)</option>
+      <option value="dogecoin">Dogecoin (DOGE)</option>
+      <option value="pi-network">Pi Network (PI)</option>
+      <option value="litecoin">Litecoin (LTC)</option>
+      <option value="solana">Solana (SOL)</option>
+    </select>
+    <button type="submit">Track</button>
+  </form>
+
+  <div>
+    <h2>{{ coin }} Price + Forecast</h2>
+    <img src="data:image/png;base64,{{ plot_img }}" alt="Price Chart">
+  </div>
+
+  <div>
+    <h3>Crypto News</h3>
+    <ul>
+      {% for article in news %}
+        <li>{{ article.title }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <script>
+    const btn = document.getElementById('mode-toggle');
+    btn.addEventListener('click', () => {
+      const body = document.body;
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        btn.textContent = '🔆';
+      } else {
+        body.classList.add('light-mode');
+        btn.textContent = '🌙';
+      }
+    });
+  </script>
+</body>
+</html>
