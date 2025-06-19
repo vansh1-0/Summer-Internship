@@ -80,9 +80,9 @@ def create_price_forecast_plot(df, forecast):
 
 def get_crypto_news():
     try:
-        url = "https://newsdata.io/api/1/latest"
+        url = "[your api]"
         params = {
-            "apikey": "pub_46521347dd6b409daa0f151126849b48",
+            "apikey": "[your api key]",
             "q": "crypto",
             "language": "en"
         }
